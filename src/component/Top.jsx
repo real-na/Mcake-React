@@ -19,7 +19,7 @@ function Top(props){
                         </p>
                         :<p className="address">
                         <i className="iconfont icon-weizhi"></i>
-                        <span>北京市</span>
+                        <span>北京市测试</span>
                         </p>
                     }
                     
