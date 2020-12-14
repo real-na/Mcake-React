@@ -1,0 +1,59 @@
+@import './vw.scss';
+
+.floorCon {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    align-content: space-between;
+    padding: vw(4);
+    color: #000;
+    font-size: vw(12);
+
+    .conProduct {
+        box-sizing: border-box;
+        width: vw(183);
+        height: vw(243);
+        padding: 0 vw(4);
+        position: relative;
+
+        .conImg {
+            padding: vw(4) 0;
+
+            img {
+                width: vw(175);
+                height: vw(175);
+            }
+        }
+
+        p {
+            width: vw(120);
+            overflow: hidden;
+            text-overflow:ellipsis ;
+            white-space: nowrap;
+            color: #7f7f7f;
+        }
+
+        i {
+            display: block;
+            position: absolute;
+            right: vw(10);
+            bottom: vw(22);
+
+            img {
+                width: vw(30);
+                height: vw(30);
+            }
+        }
+    }
+}
+
+.loading{
+    width: 100%;        
+    height: vw(100);
+    margin:0 auto;
+    border-radius: vw(10);
+    background: url('../../assets/images/loading.gif') no-repeat;
+    background-size:  vw(100) vw(70) ;
+    background-position: center;
+}
+
