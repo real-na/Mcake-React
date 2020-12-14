@@ -1,0 +1,125 @@
+@import './vw.scss';
+
+.home-banner{
+    width: 100%;
+    height: vw(384);
+    img{
+        width: 100%;
+        height: 100%;
+    }
+    .swiper-pagination-bullet{
+        outline: none;
+    }
+}
+
+.floor-box{
+    .floor {
+        width: 100%;
+    
+        .title {
+            height: vw(98);
+            padding: vw(30) vw(23);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: vw(12);
+            color: #7f7f7f;
+            border-top: vw(.5) solid #eaeaea;
+    
+            img {
+                width: vw(57);
+                height: vw(32);
+            }
+    
+            .titleCon {
+                flex: 1;
+                margin-left: vw(25);
+    
+                .cname {
+                    color: #000;
+                    font-size: vw(16);
+                    font-weight: 550;
+                }
+            }
+        }
+    
+        .bigImg {
+            img {
+                width: 100%;
+                height: vw(190);
+            }
+        }
+    }
+}
+
+.division {
+    height: vw(208);
+    width: 100%;
+    padding: vw(7.5);
+    box-sizing: border-box;
+
+    .title {
+        padding: vw(14) 0;
+        font-size: vw(14);
+        font-weight: 700;
+        color: #151515;
+        text-align: center;
+
+        span {
+            margin-left: vw(4);
+        }
+    }
+
+    .divisionImg {
+        width: 100%;
+
+        img {
+            width: vw(360);
+            height: vw(144);
+        }
+    }
+}
+
+.homeBottom {
+    width: 100%;
+    height: vw(362);
+    background-color: #000;
+    color: #8D8d8d;
+    font-size: vw(12);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: vw(56);
+    box-sizing: border-box;
+    text-align: center;
+
+    li:not(.copyRight) {
+        width: vw(112);
+    }
+
+    .footerLogo {
+        img {
+            height: vw(16);
+        }
+    }
+
+    .wxCode {
+        margin: vw(28) 0;
+
+        img {
+            width: 100%;
+            height: vw(112);
+        }
+    }
+
+    .chat {
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: vw(20);
+
+        img {
+            width: vw(38);
+            height: vw(38);
+        }
+    }
+}

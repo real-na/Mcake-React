@@ -1,32 +1,37 @@
-import React from 'react';
+import React , {useState,useContext} from 'react';
 import {NavLink} from 'react-router-dom';
 import '../css/sass/common.scss';
 
+import Handpick from '../component/Handpick';
+import MyContext from '../context';
 function Bottom(props){
     const navList = [
        {
             path:'/cake',
             text:'蛋糕'
         },{
-            path:'/sanck',
+            path:'/snack',
             text:'小食'
         },{
             path:'/cart',
             text:'购物车'
         },
     ];
-    console.log(props);
-    const showMask = () =>{
-        console.log("精选遮罩层");
+    const {setPage} = useContext(MyContext);
+    const [show,changeShow] = useState(false);
+    const showHandpick = () =>{
+        changeShow(true);
     }
     return (
-        <div className="footerBox">
+        <div className="foot-fix clearfix">
+            <div className="footer-box">
             <ul className="footer">
-            <li onClick={showMask}>精选</li>
+            <li onClick={showHandpick}>精选</li>
                 {
                     navList.map(item=>(
-                        <li key={item.path}>
-                        <NavLink to={null,item.path}
+                        <li key={item.path}
+                        onClick={()=>setPage(1)}>
+                        <NavLink to={item.path}
                         activeStyle={{fontWeight:600}}>
                             {item.text}
                         </NavLink>
@@ -34,7 +39,22 @@ function Bottom(props){
                     ))
                 }
             </ul>
-        </div>
+            </div>
+
+            {/* 精选遮罩层 */}
+            {
+                <div className="handpick-mask" style={{display:show?"block":"none"}}
+                onClick={
+                    (e) =>{
+                        if(e.target.className === "handpick-mask"){
+                            changeShow(false);
+                        }
+                    }
+                }>
+                <Handpick showHand={show} changeShow={changeShow}/>
+                </div>
+            }
+        </div> 
     )
 }
 
