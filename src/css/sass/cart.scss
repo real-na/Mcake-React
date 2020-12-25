@@ -1,0 +1,233 @@
+@import './vw.scss';
+
+.cart-box{
+    width: 100%;
+    background-color: #fff;
+    .no-cart-con{
+        .no-cart-con-pic{
+            box-sizing: border-box;
+            height: vw(189);
+            padding-top: vw(150);
+            background: url('../../assets/images/Cart/cart-empty.png') no-repeat center vw(36);
+            background-color: #c2c2c2;
+            p{
+                font-size: vw(14.5);
+                color: #fff;
+                text-align: center;
+                .tohome{
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        .no-cart-list{
+            margin-bottom: vw(59);
+            h2{
+                height: vw(41);
+                padding-left: vw(20);
+                line-height: vw(41);
+                font-size: vw(17);
+                font-weight: 700;
+                color: #000;
+            }
+        }
+
+        .cart-footer{
+            position: fixed;
+            bottom: 0;
+            display: flex;
+            height: vw(59);
+            width: 100%;
+            align-items: center;
+            background-color: #fff;
+            .gotohome{
+                line-height: vw(44);
+                height: vw(44);
+                width: 100%;
+                background-color: #ffe32a!important;
+                text-align: center;
+                color: #000;
+                font-size: vw(17);
+            }
+        }
+    }
+
+    .cart-con{
+        box-sizing: border-box;
+        .cart-con-list{
+            display: flex;
+            flex-direction: column;
+            padding: vw(7.5);
+            li+li{
+                border-top: vw(1) solid #c2c2c2;
+            }
+            li{
+                height: vw(150);
+                overflow-x: scroll;
+                overflow-y: hidden;
+                &::-webkit-scrollbar{width:0px}
+                .cart-item-con{
+                    box-sizing: border-box;
+                    padding:vw(7.5) 0;
+                    height: vw(150);
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    width: vw(430);
+                    
+                    img{
+                        width: vw(89);
+                    }
+                    .cart-item-content-box{
+                        height: vw(89);
+                        width: vw(190) !important;
+                        padding-left: vw(15);
+                        .cart-item-content-top{
+                            height: vw(35);
+                            display: flex;
+                            margin-top: vw(10);
+
+                            .cart-item-content-title{
+                                width: vw(174);
+                                .chinese{
+                                    font-weight: 700;
+                                    font-size: vw(12);
+                                    height: vw(16.8);
+                                }
+                                .french{
+                                    font-size: vw(12);
+                                    color: #848484;
+                                    height: vw(16.8);
+                                }
+                            }
+                            .cart-item-content-edit{
+                                width: vw(20);
+                                height: vw(40);
+                            }
+                        }
+                        .cart-item-content-btm{
+                            display: flex;
+                            height: vw(16.8);
+                            font-size: vw(12);
+                            margin-top: vw(15);
+                            .cart-item-price{
+                                width: vw(50);
+                                font-weight: 700;
+                            }
+                            .cart-item-wight{
+                                flex: 1;
+                                text-align: right;
+                            }
+                        }
+                    }
+                    .delete-item{
+                        flex-shrink: 0;
+                        width: vw(56);
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        border-radius: 0 vw(5) vw(5) 0;
+                        background-color: red;
+                        height: 100%;
+                        font-size: vw(13);
+                        color: #fff;
+                    }
+                }
+                
+            }
+            
+        }
+        .recommend-parts{
+            height: vw(186);
+            .recommend_goods{
+                height: vw(41);
+                padding-left: vw(20);
+                line-height: vw(41);
+                font-size: vw(15);
+                font-weight: 700;
+                color: #000;
+            }
+            .recommend_list{
+                display: flex;
+                height: vw(160);
+                overflow-x: scroll;
+                overflow-y: hidden;
+                padding: 0 vw(10);
+                margin-bottom: vw(60);
+                //自定义滚动条样式
+                &::-webkit-scrollbar{width:0px}
+                li{ 
+                    flex-shrink: 0;
+                    margin: 0 vw(2);
+                    figure{
+                        width: vw(101);
+                        margin: 0;
+                        img{
+                            width: 100%;
+                        }
+                        figcaption{
+                            position: relative;
+                            font-size: vw(13);
+                            .recommend_item_tilte{
+                                line-height: vw(20);
+                                height: vw(20);
+                            }
+                            .recommend_item_add{
+                                position: absolute;
+                                right: 0;
+                                bottom: 0;
+                                width: vw(24);
+                                height: vw(24);
+                                background-image: url("../../assets/images/cart-icon.png");
+                                background-size: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .cart-pay-footer{
+            position: fixed;
+            bottom: 0;
+            display: flex;
+            height: vw(48);
+            width: 100%;
+            align-items: center;
+            background-color: #fff;
+            font-size: vw(16);
+            .totalPrice{
+                margin-left: vw(20);
+                flex: 1;
+            }
+            .pay{
+                width: vw(107);
+                background-color: #ffe32a;
+                color: #000;
+                height: 100%;
+                font-size: vw(18);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        
+        }
+
+        input[type="checkbox"]{
+            width: vw(15);
+            height: vw(15);
+            border: none;
+            outline: none;
+            appearance: none;//使用此样式，button就和div一样，什么样式都没有了，但还能保留button的语意，button的一些其他样式还被保留了下来，
+            -webkit-appearance:none;//比如user-select，div里的文字默认是可以被选择的，但是button不能
+            cursor:pointer;
+            background-image:url("../../assets/images/Cart/uncheck.png");
+            background-size: 100% 100%;
+            margin: 0 vw(10);
+        }
+        input[type="checkbox"]:checked{
+            background-image:url("../../assets/images/Cart/checked.png");
+        }
+    }
+    
+}

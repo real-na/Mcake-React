@@ -8,11 +8,13 @@ import '../css/sass/list.scss';
 
 function List(props){
     const [listData,changeCake] = useState([]);
-    
+    console.log("listprops=",searchFormat(props.location.search));
     const {name,fid} = searchFormat(props.location.search);
 
     useEffect(async function(){
         let res;
+        // console.log("listfid=",fid);
+        // console.log("listname=",name);
         if(fid){
             res = await request.get('/goods/regfind/',{fid});
         }else{
@@ -24,9 +26,8 @@ function List(props){
                 });
             }
         }
-        // console.log(res);
         changeCake(res);
-    },[name]);
+    },[name,fid]);
     
     return (
         <div className="cake-box">

@@ -1,0 +1,111 @@
+@import './vw.scss';
+
+.reg-box{
+    display: flex;
+    flex-direction: column;
+    padding: vw(7.5);
+    background-color: #fff;
+    .reg-ipt{
+        height: vw(47);
+        border-radius: vw(8);
+        display: flex;
+        overflow: hidden;
+        margin-bottom: vw(12);
+        background-color: #ededed;
+        i{
+            width: vw(26.05);
+            height: vw(27);
+            margin-left: vw(11);
+            line-height: vw(47);
+        }
+        input{
+            flex: 1;
+            height: 100%;
+            border: none;
+            background-color: #ededed;
+            padding-left: vw(5);
+            font-size: vw(15);
+            outline: none;
+        }
+    }
+    >span:nth-of-type(1),
+    >span:nth-of-type(2){
+        height: vw(15);
+        font-size: vw(12);
+        color: #8d8d8d;
+        text-align: center;
+        margin-bottom: vw(10);
+    }
+    .reg-agree{
+        height: vw(15);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: vw(22.5);
+        input{
+            visibility: hidden;
+        }
+        input+label{
+            display: block;
+            background-color: #fff;
+            width: vw(15);
+            height: vw(15);
+            border-radius: 50%;
+            border: vw(2) solid #ffe32a;
+            position: relative;
+        }
+        input:checked+label::after{
+            content: "";
+            outline: none;
+            transform: translate(-50%,-50%);
+            position: absolute;
+            width: vw(10);
+            height: vw(10);
+            border-radius: 50%;
+            border: none;
+            top: 50%;
+            left: 50%;
+            background-color: #ffe32a;
+        }
+        span{
+            margin-left: vw(5);
+            font-size: vw(13.5);
+            color: #8d8d8d;
+        }
+    }
+    .gologin{
+           height: vw(43);
+           font-size: vw(13.5);
+           line-height: vw(43);
+           color: #8d8d8d;
+           text-align: center;
+    }
+    button{
+        margin-top: vw(37.5);
+        margin-left: vw(7.5);
+        margin-right: vw(7.5);
+        background-color: #ffe32a;
+        text-align: center;
+        line-height: vw(45);
+        font-size: vw(17);
+        border-radius: vw(6);
+        border: none;
+        outline: none;
+    }
+    .reg-tishi{
+        position: fixed;
+        top: 40%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        span{
+            box-sizing: border-box;
+            background-color: rgba(0, 0, 0, .7);
+            color: #fff;
+            height: vw(40);
+            font-size: vw(15);
+            padding: vw(10);
+            border-radius: vw(5);
+        }
+    }
+}

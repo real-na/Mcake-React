@@ -11,7 +11,7 @@ import "../../css/sass/home.scss";
 
 SwiperCore.use([ Pagination ,Autoplay,A11y]);
 function Banner(props){
-    // console.log("Bannerprops",props.bannerData);
+    // console.log("Bannerprops",props);
     // const [list,changeList] = useState([]);
     // useEffect(()=>{
     //     changeList(props.bannerData)
@@ -22,14 +22,14 @@ function Banner(props){
             initialSlide={1}
             loop={true}
             pagination={{ clickable: true }}
-            autoplay={true}
+            autoplay={props.auto}
             >
             {
-                props.bannerData.map(item=>(
-                    <SwiperSlide key={item.title}>
-                        <img src={item.img} alt={item.title}/>
+                props.bannerData?props.bannerData.map(item=>(
+                    <SwiperSlide key={item.img?item.img:item}>
+                        <img src={item.img?item.img:item} alt={item.title?item.title:""}/>
                     </SwiperSlide>
-                ))
+                )):<React.Fragment></React.Fragment>
             }
             </Swiper>
         </div>

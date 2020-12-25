@@ -9,5 +9,5 @@ module.exports = override(
     disableEsLint(),//禁用EsLint检查功能
     //useBabelRc(),
     // fixBabelImports('import',{ libraryName: "antd", style: "css" }), //ui框架按需引入
-    fixBabelImports('import',{ libraryName: "antd", style: "css" },'antdm')
+    fixBabelImports('import', {libraryName: 'antd-mobile',style: 'css'}),
 )

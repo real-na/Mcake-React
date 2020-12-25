@@ -1,0 +1,140 @@
+@import './vw.scss';
+
+.cartMask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba($color: #000000, $alpha: .3);
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+    z-index: 999999;
+
+    .mask-con {
+        position: absolute;
+        width: vw(338);
+        // height: vw(258);
+        background-color: #fff;
+        top: 0;
+        border-radius: vw(5);
+        font-size: vw(12);
+        color: #8d8d8d;
+        padding-top: vw(10);
+        transform: translateX(-50%);
+        left: 50%;
+        transition: all 1s;
+
+        ul {
+            .contentDesc {
+                display: flex;
+                padding: 0 vw(10) vw(10);
+                position: relative;
+
+                img {
+                    width: vw(99);
+                    height: vw(99);
+                }
+
+                .disc {
+                    width: vw(99);
+                    margin: 0 vw(20);
+                    padding-top: vw(4);
+
+                    h5 {
+                        color: #000;
+                        font-weight: 500;
+                    }
+
+                    p {
+                        margin: vw(4) 0;
+                    }
+                }
+
+                .closeBtn {
+                    display: inline-block;
+                    width: vw(25);
+                    height: vw(25);
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    font-size: vw(16);
+                }
+            }
+
+            .choose {
+                border-top: vw(1) solid #eaeaea;
+                height: vw(48);
+                padding: 0 vw(16);
+                display: flex;
+                justify-content: space-between;
+                line-height: vw(48);
+                font-weight: 500;
+            }
+
+            .specification {
+                .chooseSpecify {
+                    position: relative;
+                    font-size: vw(13);
+
+                    .chooseWeight {
+                        width: vw(200);
+                        position: absolute;
+                        top: vw(45);
+                        right: vw(-20);
+                        background-color: #fff;
+                        border-left: 1px solid #151515;
+                        border-bottom: 2px solid #151515;
+                        box-shadow: 0 vw(-2) vw(5) 0 rgb(26, 24, 24);
+
+                        li {
+                            height: vw(40);
+                        }
+
+                        .activeWeight {
+                            background-color: skyblue;
+                        }
+                    }
+                }
+            }
+
+            .number {
+                .chooseQty {
+                    input {
+                        outline: none;
+                        border: none;
+                        width: vw(28);
+                        height: vw(28);
+                        text-align: center;
+                    }
+
+                    input[type="button"] {
+                        background-color: #ffe32a;
+                    }
+                }
+            }
+        }
+
+        .sureBtn {
+            height: vw(45);
+
+            button {
+                width: 50%;
+                outline: none;
+                border: none;
+                line-height: vw(45);
+            }
+
+            :nth-child(1) {
+                color: #fff;
+                background-color: #888;
+            }
+
+            :nth-child(2) {
+                color: #000;
+                background-color: #ffe32a;
+            }
+        }
+    }
+}

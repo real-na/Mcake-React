@@ -1,10 +1,11 @@
-const baseUrl = 'http://120.27.231.166:3009';
-// const apiUrl = baseUrl + '/api';
-const apiUrl = baseUrl;
+// const baseUrl = 'http://120.27.231.166:3009';
+const baseUrl = '';
+const apiUrl = baseUrl + '/api';
+// const apiUrl = baseUrl;
 export function request(url,data,options){
     //这里的url值二级路由
     url = apiUrl + url;
-
+    options.credentials = "include";
     if(options.method === 'get' || options.method === undefined){
         if(data){
             const params = [];

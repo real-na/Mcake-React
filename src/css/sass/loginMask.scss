@@ -1,0 +1,57 @@
+@import './vw.scss';
+
+.login-mask{
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+    .mask-con{
+        background-color: #fff;
+        height: vw(121);
+        width: vw(318);
+        border-radius: vw(10);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        transform: scale(0);
+        transition: all .5s;
+        h4{
+            height: vw(35);
+            padding-top: vw(15);
+            color: #333;
+            font-size: vw(15);
+            text-align: center;
+        }
+        .mask-ti{
+            height: vw(48.5);
+            color: #888;
+            font-size: vw(12.75);
+            padding-top: vw(10);
+            text-align: center;
+        }
+        .mask-btn{
+            flex: 1;
+            display: flex;
+            color: #fff;
+            font-size: vw(15);
+            span{
+                flex: 1;
+                line-height: vw(37.5);
+                text-align: center;
+            }
+            span:nth-child(1){
+                background-color: #857a72;
+            }
+            span:nth-child(2){
+                color: #000;
+                background-color: #ffe32a;
+            }
+        }
+    }
+}

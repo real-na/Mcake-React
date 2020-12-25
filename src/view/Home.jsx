@@ -24,7 +24,6 @@ useEffect(function(){
         //楼层数据
         const newFloor = res.data[0].list.filter(item=>item.type === 2);
         changeFloor(newFloor);
-        
     })
 },[]);
 
@@ -32,7 +31,7 @@ useEffect(function(){
         <div>
             {/* 轮播图 */}
             {/*console.log(homeData,222)*/}
-            <Banner bannerData={homeData.length?homeData[0].source.adsense:[]}/>
+            <Banner bannerData={homeData.length?homeData[0].source.adsense:[]} auto={true}/>
             {/* 产品楼层 */}
             <Floor data = {floorData}/>
             {/* 银行专区 */}

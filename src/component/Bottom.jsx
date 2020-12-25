@@ -1,5 +1,5 @@
 import React , {useState,useContext} from 'react';
-import {NavLink} from 'react-router-dom';
+import {NavLink,withRouter} from 'react-router-dom';
 import '../css/sass/common.scss';
 
 import Handpick from '../component/Handpick';
@@ -12,16 +12,14 @@ function Bottom(props){
         },{
             path:'/snack',
             text:'小食'
-        },{
-            path:'/cart',
-            text:'购物车'
-        },
+        }
     ];
     const {setPage} = useContext(MyContext);
     const [show,changeShow] = useState(false);
     const showHandpick = () =>{
         changeShow(true);
     }
+    // console.log("bottom=",props.location.pathname.slice(1));
     return (
         <div className="foot-fix clearfix">
             <div className="footer-box">
@@ -38,6 +36,12 @@ function Bottom(props){
                         </li>
                     ))
                 }
+            <li onClick={()=>setPage(1)}>
+                <NavLink to={{
+                    pathname:'/cart',
+                    search:'?source='+props.location.pathname.slice(1)
+                }} activeStyle={{fontWeight:600}}>购物车</NavLink>
+            </li>
             </ul>
             </div>
 
@@ -58,4 +62,4 @@ function Bottom(props){
     )
 }
 
-export default Bottom;
+export default withRouter(Bottom);

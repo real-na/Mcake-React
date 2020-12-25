@@ -16,11 +16,11 @@ function Cake(){
             pageSize:6
         })
         // console.log("snackData=",res);
-        if(res.flag){
+        // if(res.flag){
             isLoading(false);
             changeIsok(true);
             changeSnack([...snackData,...res.data]);
-        }
+        // }
     },[page]);
     return (
         <div className="cake-box">

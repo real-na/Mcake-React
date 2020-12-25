@@ -9,15 +9,13 @@ function Cake(){
 
     const {page,changeIsok} = useContext(MyContext);
 
-    // console.log("Cakepage",page);
-
     useEffect(async function(){
         let res = await request.get('/goods/cakelist',{
             page,
             pageSize:6
         });
         if(res.flag){
-            console.log("cakeData=",res);
+            // console.log("cakeData=",res);
             changeCake([...cakeData,...res.data]);
             changeIsok(true);
         }
